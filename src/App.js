@@ -18,6 +18,7 @@ const App = () => {
   });
 
   useEffect(() => {
+    document.title = "React Todo"
     const storedItems = localStorage.getItem("todolist");
     if (storedItems) {
       // console.log(JSON.parse(storedItems));
