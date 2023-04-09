@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Lato&family=Montserrat&family=Open+Sans&family=Poppins&family=Roboto&family=Roboto+Mono&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid yellow; */
+}
+
+body {
+  background: rgb(202, 224, 247);
+  color: rgb(53, 53, 58);
+  font-family: "Poppins", sans-serif;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* margin: auto; */
+}
+
+.header {
+  width: 100%;
+  padding: 1rem;
+  background: rgb(7, 20, 34);
+  text-align: center;
+  color: #fff;
+}
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+main {
+  flex-grow: 1;
+}
+.main-container {
+  margin: 2rem 0;
+}
+.main-heading{
+  margin: 1rem ;
+  color:#111314 ;
+}
+.list-empty {
+  margin: 2rem;
+}
+.item-card {
+  display: flex;
+  position: relative;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgb(155, 155, 155);
+}
+.important-todo {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  color: #007bff;
+}
+.item-card:last-child {
+  border: none;
+}
+.todo-info {
+  width: 100%;
+}
+
+.del-btn {
+  float: right;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background: red;
+  color: white;
+}
+.del-btn:hover {
+  background: rgb(248, 61, 61);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+}
+.important {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 0.5rem;
+}
+
+input[type="text"],
+textarea,
+input[type="date"] {
+  background: transparent;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #7a7a7a;
+  font-size: 1rem;
+  color: rgb(58, 58, 58);
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #0069d9;
+}
+
+aside {
+  border-top: 1px solid rgb(136, 136, 136);
+}
+.dashboard {
+  border-top: 2px solid rgb(172, 172, 172);
+  padding: 1rem;
+}
+.new-entry {
+  margin: 1rem;
+}
+
+.footer {
+  width: 100%;
+  padding: 1rem;
+  background: rgb(7, 20, 34);
+  color: #ffffff;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+  .app {
+    margin: auto;
+    width: 900px;
+    border: 1px solid rgb(66, 66, 66);
+  }
+  aside {
+    border-top: none;
+    border-left: 1px solid rgb(139, 139, 139);
+  }
+}
