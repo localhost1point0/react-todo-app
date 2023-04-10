@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const TodoList = ({ todos, handleToggle, handleDelete }) => {
   const today = new Date();
@@ -17,39 +19,43 @@ const TodoList = ({ todos, handleToggle, handleDelete }) => {
       {sortedTodos.length ? (
         sortedTodos.map((item) => {
           const isOverdue = new Date(item.dueDate) < today && !item.completed;
-          // const importantClass = item.important ? "important-class" : "";
+          const takeClass = isOverdue ? "overdued" : "";
 
           // style={(item.checked) ? { textDecoration: 'line-through' } : null}
 
           return (
-            <div
-              className="item-card"
-              key={item.id}
-              style={item.completed ? { textDecoration: "line-through" } : null}
-            >
-              <input
-                type="checkbox"
-                checked={item.completed}
-                onChange={() => (isOverdue ? null : handleToggle(item.id))}
-                disabled={isOverdue}
-              />
-              <div className="todo-info">
-                <h3>{item.todo}</h3>
+            <div className={`item-card ${takeClass}`} key={item.id}>
+              <div
+                className="todo-info"
+                style={
+                  item.completed ? { textDecoration: "line-through" } : null
+                }
+              >
+                <h3>{item.todo} </h3>
                 <p>{item.detail}</p>
-                <p>
+                <p className="date">
                   Scheduled date: {item.dueDate}{" "}
                   <span style={{ color: "green" }}>
                     {isOverdue && "(overdued)"}
                   </span>
                 </p>
                 <div className="important-todo">
-                  <p>{item.important ? "important" : ""}</p>
+                  {item.important ? <FontAwesomeIcon icon={faStar} /> : ""}
                 </div>
+              </div>
+              <div className="todo-btns">
+                <input
+                  type="checkbox"
+                  checked={item.completed}
+                  onChange={() => (isOverdue ? null : handleToggle(item.id))}
+                  disabled={isOverdue}
+                />
+                <span className="card-complete-label">Complete</span>
                 <button
                   className="del-btn"
                   onClick={() => handleDelete(item.id)}
                 >
-                  Delete
+                  <FontAwesomeIcon icon={faTrashAlt} />
                 </button>
               </div>
             </div>

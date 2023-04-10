@@ -33,7 +33,7 @@ npm start
 - Add new tasks(title, detail and scheduled date)
 - Delete tasks
 - Mark tasks as complete
-- While scheduling a task mark new task as important so that it appears on the top of todo list.
+- While scheduling a task mark new task as important so that it appears on the top of todo list with a star.
 - Get notified about overdued tasks
 - Dashboard that shows count of total, completed, pending and overdued task.
 
