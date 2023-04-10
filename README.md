@@ -56,5 +56,5 @@ npm start
 
 ## Hosting
 
-This app is hosted live on Github pages. To access the hosted app, visit the link: [https://saragam443.github.io/react-todo-app]
+This app is hosted live on Github pages. To access the hosted app, visit the link: https://saragam443.github.io/react-todo-app
 
