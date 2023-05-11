@@ -5,7 +5,8 @@ import { v4 as uuid } from "uuid";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Dashboard from "./components/Dashboard";
-import { HelmetProvider, Helmet } from "react-helmet-async";
+// import { HelmetProvider, Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -74,7 +75,7 @@ const App = () => {
   };
 
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>{articleData.title}</title>
         <meta name="description" content={articleData.description} />
@@ -108,7 +109,7 @@ const App = () => {
         </div>
         <Footer />
       </div>
-    </HelmetProvider>
+    </>
   );
 };
 
