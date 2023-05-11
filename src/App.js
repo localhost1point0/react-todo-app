@@ -83,9 +83,19 @@ const App = () => {
 
         {/* Open Graph tags */}
         <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Saragam's Blog" />
-        <meta property="og:title" content={articleData.title} />
-        <meta property="og:description" content={articleData.description} />
+        <meta
+          name="site_name"
+          property="og:site_name"
+          content="Saragam's Blog"
+        />
+        <meta name="title" property="og:title" content={articleData.title} />
+        <meta
+          name="description"
+          property="og:description"
+          content={articleData.description}
+        />
+
+        {/* <meta name="image" property="og:image" content="[Image URL here]"></meta> */}
       </Helmet>
 
       <div className="app">
