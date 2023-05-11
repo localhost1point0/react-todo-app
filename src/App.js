@@ -64,21 +64,27 @@ const App = () => {
     setAndSave(filteredTodo);
   };
 
-  const article = {
+  const articleData = {
     title: "A Step-by-Step Guide",
     description:
-      "A dummies guide to getting up and running with selenium-webdriver",
+      "This is the content of Article. A dummies guide to getting up and running with react-helmet",
+    author: "Saragam Subedi",
     image: "https://miro.medium.com/max/812/1*1xhuVp8f2WFUGUByHS8VTg.png",
+    url: "https://saragam443.github.io/react-todo-app/",
   };
 
   return (
     <HelmetProvider>
       <Helmet>
-        <title>{article.title}</title>
-        <meta name="description" content={article.description} />
-        <meta property="og:title" content={article.title} />
-        <meta property="og:description" content={article.description} />
-        <meta property="og:image" content={article.image} />
+        <title>{articleData.title}</title>
+        <meta name="description" content={articleData.description} />
+        <meta name="author" content={articleData.author} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Saragam's Blog" />
+        <meta property="og:title" content={articleData.title} />
+        <meta property="og:url" content={articleData.url} />
+        <meta property="og:description" content={articleData.description} />
+        <meta property="og:image" content={articleData.image} />
       </Helmet>
 
       <div className="app">
