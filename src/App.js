@@ -80,12 +80,12 @@ const App = () => {
         <title>{articleData.title}</title>
         <meta name="description" content={articleData.description} />
         <meta name="author" content={articleData.author} />
+
+        {/* Open Graph tags */}
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Saragam's Blog" />
         <meta property="og:title" content={articleData.title} />
-        <meta property="og:url" content={articleData.url} />
         <meta property="og:description" content={articleData.description} />
-        <meta property="og:image" content={articleData.image} />
       </Helmet>
 
       <div className="app">
