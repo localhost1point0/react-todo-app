@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Dashboard from "./components/Dashboard";
-import { HelmetProvider, Helmet } from "react-helmet-async";
+// import { HelmetProvider, Helmet } from "react-helmet-async";
 // import { Helmet } from "react-helmet";
 
 const App = () => {
@@ -74,29 +74,7 @@ const App = () => {
   };
 
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>{articleData.title}</title>
-        <meta name="description" content={articleData.description} />
-        <meta name="author" content={articleData.author} />
-
-        {/* Open Graph tags */}
-        <meta property="og:type" content="article" />
-        <meta
-          name="site_name"
-          property="og:site_name"
-          content="Saragam's Blog"
-        />
-        <meta name="title" property="og:title" content={articleData.title} />
-        <meta
-          name="description"
-          property="og:description"
-          content={articleData.description}
-        />
-
-        {/* <meta name="image" property="og:image" content="[Image URL here]"></meta> */}
-      </Helmet>
-
+    <>
       <div className="app">
         <Header />
         <div className="container">
@@ -118,7 +96,7 @@ const App = () => {
         </div>
         <Footer />
       </div>
-    </HelmetProvider>
+    </>
   );
 };
 
